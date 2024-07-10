@@ -10,6 +10,8 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -11,9 +11,22 @@ export async function getProducts(req, res) {
 }
 
 export async function addProduct(req, res) {
-    const { name, description, price, category } = req.body;
+    const { name, description, price, category, title, desc, img, categories, size, color } = req.body;
+    
     try {
-        const newProduct = new Product({ name, description, price, category });
+        const newProduct = new Product({
+            name,
+            description,
+            price,
+            category,
+            title,
+            desc,
+            img,
+            categories,
+            size,
+            color
+        });
+
         const product = await newProduct.save();
         res.json(product);
     } catch (err) {
